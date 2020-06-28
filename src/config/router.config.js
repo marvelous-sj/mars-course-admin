@@ -260,8 +260,23 @@ export const asyncRouterMap = [
             ]
           }
         ]
+      },
+      // Chapter
+      {
+        path: '/chapter',
+        name: 'chapter',
+        component: RouteView,
+        redirect: '/chapter/list',
+        meta: { title: '大章节', icon: 'warning', permission: [ 'user' ] },
+        children: [
+          {
+            path: '/chapter/list',
+            name: 'ChapterList',
+            component: () => import('@/views/chapter'),
+            meta: { title: '章节列表', permission: [ 'user' ] }
+          }
+        ]
       }
-
       // other
       /*
       {
